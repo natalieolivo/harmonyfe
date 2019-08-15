@@ -1,0 +1,26 @@
+{
+  "name": "harmonyfe",
+  "version": "1.0.0",
+  "description": "front end app that present song and sound suggestions based on a user choices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natalieolivo/harmonyfe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natalieolivo/harmonyfe/issues"
+  },
+  "homepage": "https://github.com/natalieolivo/harmonyfe#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "prettier": "^1.18.2"
+  }
+}
