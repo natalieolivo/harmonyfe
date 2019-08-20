@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         input { display: block; }
+    </style>
+</head>
+<body>
+    <form id="userForm" method="POST" action="http://localhost:9999/users">
+        <input name="firstName" class="input" type="text" placeholder="First Name"></input>
+        <input name="lastName" class="input" type="text" placeholder="Last Name"></input>
+        <input name="password" class="input" type="text" placeholder="Password"></input>
+        <button>Create my user</button>
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>
