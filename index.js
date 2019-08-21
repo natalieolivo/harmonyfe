@@ -11,7 +11,7 @@
     let formToJSON = (formElements) => [].reduce.call(formElements, (data, element) => {
             data[element.name] = element.value;
             return data;
-     }, {})    
+     }, {}) 
         
     form.addEventListener('submit', (event) => {
         event.preventDefault();
