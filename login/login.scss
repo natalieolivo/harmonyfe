@@ -1,0 +1,71 @@
+.login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;    
+}
+
+.login-form {
+    min-width: 320px;    
+}
+
+.login-input {
+    color: #6EB1FF;
+    font-size: 24px;
+}
+
+.login-label {
+    font-size: 14px;
+    text-align: left;    
+}
+
+.login-label,
+.login-label-text {
+    position: relative; 
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.login-label,
+.login-label .login-label-text::after {    
+    letter-spacing: .0875em;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 8px 0 8px 0;
+}
+
+.login-label::before {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.login-input:focus + .login-label::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    background-color: #6EB1FF;
+    background-image: linear-gradient(to right,
+        #6EB1FF 50%,
+        rgba(255,255,255,0) 0%);
+      background-position: 0% 50%;
+}
+
+.login-input:focus + .login-label .login-label-text::after {
+    position: absolute;
+    left: 0;
+    color: #fff;
+    background-image: linear-gradient(to right,
+        #6EB1FF 50%,
+        rgba(255,255,255,0) 0%);
+    background-position: 0% 50%;
+    background-size: 200%;
+    content: attr(data-text);
+    overflow: hidden;
+
+}
+
+::before,
+::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+}
