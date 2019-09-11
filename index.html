@@ -9,58 +9,8 @@
          input { display: block; }
     </style>
 </head>
-<body id="harmonyApp">      
-    <section class="login-section">
-        <h1>Harmony</h1>
-        <h2>Please... Login</h2>
-        <form class="login-form" id="userForm" method="POST" action="http://localhost:9999/users">            
-            <fieldset>
-                <input name="email" id="email" class="login-input" type="text"></input>
-                <label for="email" class="login-label">
-                    <span class="login-label-text" data-text="email">email</span>
-                </label>
-            </fieldset>
-            <fieldset>
-                <input name="password" type="password" id="password" class="login-input" type="text"></input>
-                <label for="password" class="login-label">
-                    <span class="login-label-text" data-text="password">password</span>
-                </label>
-            </fieldset>
-            <button class="login-button">Login</button>
-            <section class="error-container"></section>          
-        </form>
-    </section>
-
-    <section class="login-section">            
-        <h2>Or ... Create a New Account</h2>
-        <form class="create-account-form" id="createForm" method="POST" action="http://localhost:9999/users">
-            <fieldset>
-                <input name="firstName" id="createFirstName" class="login-input" type="text"></input>
-                <label for="firstName" class="login-label">
-                    <span class="login-label-text" data-text="first name">first name</span>
-                </label>
-            </fieldset>
-            <fieldset>
-                <input name="lastName" id="createLastName" class="login-input" type="text"></input>
-                <label for="lastName" class="login-label">
-                    <span class="login-label-text" data-text="last name">last name</span>
-                </label>
-            </fieldset>
-            <fieldset>
-                <input name="email" id="createEmail" class="login-input" type="text"></input>
-                <label for="email" class="login-label">
-                    <span class="login-label-text" data-text="email">email</span>
-                </label>
-            </fieldset>    
-            <fieldset>
-                <input name="password" id="createPassword" class="login-input" type="text"></input>
-                <label for="password" class="login-label">
-                    <span class="login-label-text" data-text="password">password</span>
-                </label>
-            </fieldset>
-            <button class="login-button">Create an Account</button>            
-        </form>
-    </section>
+<body>
+    <div id="harmonyApp"></div>    
     <script src="./index.js"></script>
 </body>
 </html>
