@@ -1,8 +1,7 @@
 import "./error.scss";
 
-const errorContainer = document.querySelector(".error-container");
-
-const RenderErrors = (errors) => {    
+const RenderErrors = (errors) => {
+    const errorContainer = document.querySelector(".error-container");
     let errorTemplate = "";
     errors.split(",").forEach((error) => {
         errorTemplate += `<div class="error-block">${error}</div>`
