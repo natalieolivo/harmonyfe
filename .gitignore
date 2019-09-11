@@ -1,1 +1,5 @@
+# compiled from node
 node_modules
+
+# compiled from parcel
+dist
