@@ -11,13 +11,13 @@ class App extends React.Component {
 
         this.handleisUserUpdate = this.handleisUserUpdate.bind(this);
 
-        this.state = { 
-            isUser: true,
-            isLoggedIn: false
+        this.state = {            
+            isUser: window.localStorage.getItem("userAccessToken") ? true : false,
+            isLoggedIn: window.localStorage.getItem("userAccessToken") ? true : false
         };
     }
 
-    handleisUserUpdate(state) {        
+    handleisUserUpdate(state) {       
         event.preventDefault();                
         this.setState({ 
             isUser: state
@@ -27,7 +27,7 @@ class App extends React.Component {
     render() {        
         if(this.state.isUser) {
             if (this.state.isLoggedIn) {
-                return <Welcome />
+                return <Welcome email={window.localStorage.getItem("userName") || null} />
             }
             return (                           
                 <Login handleisUserUpdate={this.handleisUserUpdate} />            
@@ -38,9 +38,3 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.querySelector("#harmonyApp"));
-// const App = () => {    
-//     const Auth = Login();
-//     Account();
-// }
-
-// App();
