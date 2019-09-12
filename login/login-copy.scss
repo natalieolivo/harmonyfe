@@ -191,26 +191,3 @@ fieldset input:invalid {
     }
   }
 }
-
-.login-button {
-  border: 0;
-  background-color: #50617A;
-  padding: 18px 30px;
-  font-size: 14px;
-  line-height: 1.5;
-  text-transform: uppercase;
-  letter-spacing: .0875em;
-  font-weight: 500;
-  color: #ffffff;
-  font-family: $base-font-family;
-  border-radius: 100px;
-  outline: 0;
-  transition: background-color $time $bezier,
-              color $time $bezier;
-}
-
-.login-button:focus,.login-button:active,
-.login-button:hover {
-  background-color: rgb(211, 226, 74);
-  color: white;
-}

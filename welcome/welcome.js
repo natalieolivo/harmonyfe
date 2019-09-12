@@ -35,8 +35,7 @@ export default (props) => {
             diagnostic.textContent = spokenText + '.';                    
             diagnostic.classList.remove("start");
 
-            setTimeout(() => {
-                console.log("remove");
+            setTimeout(() => {                
                 diagnostic.classList.add("start");
             }, 1000)
         }

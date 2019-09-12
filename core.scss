@@ -1,3 +1,8 @@
+$bezier: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$time: 300ms;
+
+$base-font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 body {
     font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: #333;
@@ -43,3 +48,30 @@ button {
 input:-internal-autofill-selected {
     background-color: transparent;
 }
+
+a {
+    color: rgb(211, 226, 74);
+}
+
+.button {
+    border: 0;
+    background-color: #50617A;
+    padding: 18px 30px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: .0875em;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: $base-font-family;
+    border-radius: 100px;
+    outline: 0;
+    transition: background-color $time $bezier,
+                color $time $bezier;
+  }
+  
+  .button:focus,.button:active,
+  .button:hover {
+    background-color: rgb(211, 226, 74);
+    color: white;
+  }

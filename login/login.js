@@ -7,16 +7,12 @@ import { RenderErrors } from "../error/error";
 const Login = function(props) {
     const localStorage = window.localStorage;
     const harmonyAPIPort = 9999;
-    const usersEndpoint = '/auth';     
+    const usersEndpoint = `http://localhost:${harmonyAPIPort}`;
+    const authResource = `/auth`;
     const errorBuffer = [];    
     let jsonFormData;
-    
-    // I borrowed this ...
-    // It's basically just mapping reduce function to an object. Need to explore if I can just
-    // use forEach here. What I gain is that third param that I can pass in and reduce to a fully formed
-    // JSON form data, but not sure if that is sensible use of reduce.
-    // update to self: isn't crawling the DOM an antipattern in react?
-    let formToJSON = (formElements) => [].reduce.call(formElements, (data, element) => {
+        
+    let formToJSON = (formElements) => [].reduce.call(formElements, (data, element) => {        
         data[element.name] = element.value;
         return data;
     }, {});    
@@ -32,7 +28,7 @@ const Login = function(props) {
         event.preventDefault();        
         jsonFormData = formToJSON(userform.elements);
         console.log("data", jsonFormData);
-        fetch(`http://localhost:${harmonyAPIPort}${usersEndpoint}`, {
+        fetch(`${usersEndpoint}${authResource}`, {
             method: 'POST',
             body: JSON.stringify(jsonFormData),
             headers: {
@@ -47,7 +43,9 @@ const Login = function(props) {
                 RenderErrors(responseBody.errors);
                 console.error(responseBody.errors);
             } else {                  
-                localStorage.setItem('token', responseBody.accessToken)
+                localStorage.setItem('userAccessToken', responseBody.accessToken);
+                localStorage.setItem('email', responseBody.email);                
+                console.log(localStorage.getItem('userAccessToken'));                
             }                
         });
     };    
@@ -93,7 +91,7 @@ const Login = function(props) {
                         <span className="login-label-text" data-text="password">password</span>
                     </label>
                 </fieldset>
-                <button className="login-button">Login</button>
+                <button className="button">Login</button>
                 <section className="error-container"></section>          
             </form>
             <a onClick={onCreateUserAccount}>Create User Account</a>
