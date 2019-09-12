@@ -1,14 +1,37 @@
 import React from "react";
 import Header from "../header/header";
+import { RenderErrors } from "../error/error";
 
 const account = function(props) {
-    const createUserForm = document.querySelector('#createUserForm');    
-    const localStorage = window.localStorage;
-    const endpoint = "http://localhost";
-    const port = 9999;       
+        
+    const harmonyAPIPort = 9999;       
+    const endpoint = `http://localhost:${harmonyAPIPort}`;
+    const resource = `/users`;
     
     const onCreateAccount = event => {
-        console.log("go display some auth");
+        event.preventDefault();
+        const createUserForm = document.querySelector('#createUserForm');
+        let JSONFormData = (formElements) => [].reduce.call(formElements, (data, element) => {        
+            data[element.name] = element.value;            
+            return data;
+        }, {});                
+
+        fetch(`${endpoint}${resource}`, {
+                method: 'POST',
+                body: JSON.stringify(JSONFormData(createUserForm.elements)),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then((response) => {
+                return response.json();
+            }).then((responseBody) => {
+                if(responseBody) {
+                    console.log(`user created ${responseBody}`);
+                } else {
+                    RenderErrors(responseBody.errors);
+                }                
+            })
     }
 
     const onLogInUser = event => {
@@ -44,7 +67,7 @@ const account = function(props) {
                         <span className="login-label-text" data-text="password">password</span>
                     </label>
                 </fieldset>
-                <button className="login-button">Create an Account</button>            
+                <button className="button">Create an Account</button>            
             </form>
             <a onClick={onLogInUser}>Already a user</a>
         </section>
