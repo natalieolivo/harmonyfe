@@ -1,0 +1,77 @@
+$bezier: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$time: 300ms;
+
+$base-font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+body {
+    font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #333;
+    color: #fff;
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+fieldset {
+    border: none;
+}
+
+input[type=text] {
+    border: none;
+    background: none;      
+    padding: 16px 0 16px 0;
+    width: 100%;
+}
+
+input:focus {
+    outline: 0;
+}
+
+label {
+    width: 100%;
+    display: inline-block;
+    text-transform: uppercase;   
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+input:-internal-autofill-selected {
+    background-color: transparent;
+}
+
+a {
+    color: rgb(211, 226, 74);
+}
+
+.button {
+    border: 0;
+    background-color: #50617A;
+    padding: 18px 30px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: .0875em;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: $base-font-family;
+    border-radius: 100px;
+    outline: 0;
+    transition: background-color $time $bezier,
+                color $time $bezier;
+  }
+  
+  .button:focus,.button:active,
+  .button:hover {
+    background-color: rgb(211, 226, 74);
+    color: white;
+  }

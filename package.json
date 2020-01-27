@@ -1,6 +1,7 @@
 {
   "name": "harmonyfe",
   "version": "0.1.0",
+  "description": "front end app that present song and sound suggestions based on a user choices",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -8,7 +9,15 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "redux": "4.0.5",
+    "react-scripts": "3.3.0",
+    "sass": "^1.22.10"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "prettier": "^1.18.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,6 +27,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natalieolivo/harmonyfe.git"
   },
   "browserslist": {
     "production": [

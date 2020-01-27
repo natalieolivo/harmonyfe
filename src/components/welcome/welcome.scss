@@ -1,0 +1,55 @@
+.welcome-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-user {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.welcome-button {
+    margin: 0 10px;
+}
+
+.output {
+    color: rgb(211, 226, 74);
+    opacity:0; 
+    height: 400px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+}
+
+.results img {
+    margin: 0 10px;
+}
+
+.output.start {    
+    animation: fadeText 5s;    
+}
+
+@keyframes fadeText {
+    0% {
+        opacity: 1;
+        font-size: 100px;
+    }
+    
+    50% {
+        opacity: 1;
+        font-size: 100px;
+    }
+
+    100% {
+        font-size: 25px;
+        opacity: 0;
+    }
+}
